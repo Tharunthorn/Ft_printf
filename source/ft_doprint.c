@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_doprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 10:02:14 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/13 00:54:04 by thmusik          ###   ########.fr       */
+/*   Created: 2022/10/12 13:23:49 by thmusik           #+#    #+#             */
+/*   Updated: 2022/10/25 20:04:12 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/libprintf.h"
 
-int	ft_printf(const char *format, ...)
+unsigned int	ft_doprint(const char *format, va_list datalist)
 {
-	va_list	datalist;
 	unsigned int	outputlenght;
+	register char	formatindex;
 
-	va_start(datalist, format);
-	outputlenght = ft_doprint(format, datalist);
-	va_end(datalist);
+	outputlenght = 0;
+	formatindex = *format;
+	while (formatindex != '\0')
+	{
+		if (formatindex != '%')
+		{
+			format++;
+			outputlenght += ft_putchar(formatindex);
+			formatindex = *format;
+			continue;
+		}
+		formatindex = *++format;
+		ft_formatprint(formatindex, outputlenght, datalist);
+		formatindex = *++format;
+	}
 	return (outputlenght);
 }

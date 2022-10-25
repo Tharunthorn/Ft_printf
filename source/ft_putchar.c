@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 10:02:14 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/13 00:54:04 by thmusik          ###   ########.fr       */
+/*   Created: 2022/10/24 11:38:25 by thmusik           #+#    #+#             */
+/*   Updated: 2022/10/25 19:29:03 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/libprintf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_putchar(char c)
 {
-	va_list	datalist;
-	unsigned int	outputlenght;
-
-	va_start(datalist, format);
-	outputlenght = ft_doprint(format, datalist);
-	va_end(datalist);
-	return (outputlenght);
+	write(1, &c, 1);
+	return (1);
 }

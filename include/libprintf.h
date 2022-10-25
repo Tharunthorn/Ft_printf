@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   libprintf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 10:02:14 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/13 00:54:04 by thmusik          ###   ########.fr       */
+/*   Created: 2022/10/12 13:17:53 by thmusik           #+#    #+#             */
+/*   Updated: 2022/10/25 20:17:47 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
-#include "../include/libprintf.h"
+#ifndef LIBPRINTF_H
+# define LIBPRINTF_H
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	datalist;
-	unsigned int	outputlenght;
+# include <stdarg.h>
 
-	va_start(datalist, format);
-	outputlenght = ft_doprint(format, datalist);
-	va_end(datalist);
-	return (outputlenght);
-}
+unsigned int	ft_doprint(const char *format, va_list datalist);
+
+void	ft_formatprint(register char formatindex,
+			unsigned int outputlenght, va_list datalist);
+
+int		ft_printf(const char *format, ...);
+
+int		ft_putchar(char c);
+
+int		ft_putstring(char *s);
+
+#endif
