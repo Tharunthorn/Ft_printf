@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putdecimal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 11:38:25 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/30 20:22:14 by thmusik          ###   ########.fr       */
+/*   Created: 2022/10/28 09:09:53 by thmusik           #+#    #+#             */
+/*   Updated: 2022/10/30 20:48:57 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putdecimal(int n)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int		len;
+	char	*number;
+
+	number = ft_itoa(n);
+	ft_putstr_fd(number, 1);
+	len = ft_strlen(number);
+	free(number);
+	return (len);
 }

@@ -6,24 +6,20 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:13:08 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/25 20:16:47 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/10/30 20:50:47 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
-#include "../include/libprintf.h"
+#include "../include/ft_printf.h"
 
 int	ft_putstring(char *s)
 {
-	int i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (*(s + i))
+	if (s)
 	{
-		ft_putchar_fd(*s, 1);
-		i++;
+		ft_putstr_fd(s, 1);
+		return (ft_strlen(s));
 	}
-	return (i);
+	ft_putstr_fd("(null)", 1);
+	return (6);
 }
