@@ -6,31 +6,31 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:03:34 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/31 14:49:30 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:12:17 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/ft_printf.h"
 
-int	ft_formatprint(register char formatindex, va_list datalist)
+int	ft_formatprint(register char format, va_list data)
 {
-	int outputlenght;
+	int	outputlenght;
 
 	outputlenght = 0;
-	if (formatindex == 'c')
-		outputlenght += ft_putchar(va_arg(datalist, int));
-	else if (formatindex == 's')
-		outputlenght += ft_putstring(va_arg(datalist, char *));
-	else if (formatindex == 'p')
-		outputlenght += ft_putpointer(va_arg(datalist, unsigned long long));
-	else if (formatindex == 'd' || formatindex == 'i')
-		outputlenght += ft_putdecimal(va_arg(datalist, int));
-	else if (formatindex == 'u')
-		outputlenght += ft_putudecimal(va_arg(datalist, unsigned int));
-	else if (formatindex == 'x' || formatindex == 'X')
-		outputlenght = ft_puthexadecimal(va_arg(datalist, unsigned int), formatindex);
-	else if (formatindex == '%')
+	if (format == 'c')
+		outputlenght += ft_putchar(va_arg(data, int));
+	else if (format == 's')
+		outputlenght += ft_putstring(va_arg(data, char *));
+	else if (format == 'p')
+		outputlenght += ft_putpointer(va_arg(data, unsigned long long));
+	else if (format == 'd' || format == 'i')
+		outputlenght += ft_putdecimal(va_arg(data, int));
+	else if (format == 'u')
+		outputlenght += ft_putudecimal(va_arg(data, unsigned int));
+	else if (format == 'x' || format == 'X')
+		outputlenght = ft_puthexadecimal(va_arg(data, unsigned int), format);
+	else if (format == '%')
 		outputlenght += ft_putchar('%');
 	return (outputlenght);
 }

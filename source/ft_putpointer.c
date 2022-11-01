@@ -6,13 +6,12 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:37:01 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/31 15:06:07 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:08:25 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 #include "../include/ft_printf.h"
-
 
 int	ft_pointerlen(unsigned long long num)
 {
@@ -63,4 +62,3 @@ int	ft_putpointer(unsigned long long ptr)
 	}
 	return (print_length);
 }
-

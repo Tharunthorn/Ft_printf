@@ -6,7 +6,7 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:23:49 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/30 20:21:54 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:07:48 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ unsigned int	ft_doprint(const char *format, va_list datalist)
 			format++;
 			outputlenght += ft_putchar(formatindex);
 			formatindex = *format;
-			continue;
+			continue ;
 		}
 		formatindex = *++format;
 		outputlenght += ft_formatprint(formatindex, datalist);

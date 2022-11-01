@@ -6,7 +6,7 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:05:26 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/31 14:56:10 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:06:25 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_hexlen(unsigned int num)
 
 void	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	int	len;
+	int		len;
 	long	nb;
 
 	len = ft_strlen(base);
