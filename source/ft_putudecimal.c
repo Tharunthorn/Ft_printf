@@ -6,7 +6,7 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 22:38:46 by thmusik           #+#    #+#             */
-/*   Updated: 2022/10/30 21:11:00 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/11/01 10:58:43 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ unsigned int	ft_uintlen(unsigned	int n)
 
 char	*ft_uitoa(unsigned int n)
 {
-	char	*number;
+	char			*number;
 	unsigned int	len;
 
 	len = ft_uintlen(n);
 	number = (char *)malloc(sizeof(char) * (len + 1));
 	if (!number)
 		return (0);
-	*(number +len) = '\0';
+	*(number + len) = '\0';
 	while (n != 0)
 	{
 		*(number + len - 1) = n % 10 + 48;
@@ -48,7 +48,7 @@ char	*ft_uitoa(unsigned int n)
 int	ft_putudecimal(unsigned int n)
 {
 	unsigned int	len;
-	char	*number;
+	char			*number;
 
 	if (n == 0)
 		len = write(1, "0", 1);
