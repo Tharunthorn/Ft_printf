@@ -6,7 +6,7 @@
 /*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:03:34 by thmusik           #+#    #+#             */
-/*   Updated: 2022/11/01 11:12:17 by thmusik          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:58:13 by thmusik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_formatprint(register char format, va_list data)
 
 	outputlenght = 0;
 	if (format == 'c')
-		outputlenght += ft_putchar(va_arg(data, int));
+		outputlenght += ft_putchar(va_arg(data, unsigned int));
 	else if (format == 's')
 		outputlenght += ft_putstring(va_arg(data, char *));
 	else if (format == 'p')
